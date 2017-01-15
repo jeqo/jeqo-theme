@@ -9,9 +9,10 @@
   {{ with .Site.Params.role }}<meta name="description" content="{{ . }}">{{ end }}
   <base href="{{ .Site.BaseURL }}">
   <title>{{ .Title }}</title>
-  <!-- <link rel="stylesheet" href="{{ "/css/style.min.css" | relURL }}"> -->
   <link rel="stylesheet" href="{{ "/css/style.min.css" | relURL }}">
 
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 </head>
 <body>
   <div class="wrap">
@@ -20,6 +21,15 @@
           {{ range .Site.Menus.top }}
           <li class="navbar-item"><a class="navbar-link" href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
         </ul>
+    </div>
+    <div class="navbar">
+        {{ if .IsTranslated }}
+        <ul class="navbar-list" style="float:right">
+            {{ range .Translations }}
+            <li class="navbar-item"><a class="navbar-link" href="{{ .Permalink }}">{{ .Lang }}</a></li>
+            {{ end}}
+        </ul>
+        {{ end }}
     </div>
     <div class="header"><span style="font-size: 34px;">
       <a href="{{ .Site.BaseURL  }}">{{ .Site.Title }}</a></span>
