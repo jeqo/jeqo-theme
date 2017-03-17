@@ -23,8 +23,8 @@
               <a class="navbar-link" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
           </li>
           {{- end }}
-          <li class="navbar-item"><a class="navbar-link">|</a></li>
           {{ if .IsTranslated }}
+          <li class="navbar-item"><a class="navbar-link">|</a></li>
           {{ range .Translations }}
           <li class="navbar-item"><a class="navbar-link" href="{{ .Permalink }}">{{ .Lang }}</a></li>
           {{ end}}
