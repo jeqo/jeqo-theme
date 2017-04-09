@@ -10,7 +10,6 @@
   <base href="{{ .Site.BaseURL }}">
   <title>{{ .Title }}</title>
   <link rel="stylesheet" href="{{ "/css/style.min.css" | relURL }}">
-
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 </head>
@@ -31,6 +30,9 @@
         </ul>
         {{ end }}
     </div>
-    <div class="header"><span style="font-size: 34px;">
-      <a href="{{ .Site.BaseURL  }}">{{ .Site.Title }}</a></span>
-      {{ if .Site.Params.description }}<span style="font-size:12px;">&nbsp;&nbsp;|&nbsp;&nbsp;<i>{{ .Site.Params.description }}</i> </span>{{end}}</div>
+    <div class="header">
+      <span style="font-size: 34px;">
+        <a href="{{ .Site.BaseURL  }}">{{ .Site.Title }}</a>
+      </span>
+      {{ if .Site.Params.description }}<span style="font-size:12px;">&nbsp;&nbsp;|&nbsp;&nbsp;<i>{{ .Site.Params.description }}</i> </span>{{end}}
+    </div>
